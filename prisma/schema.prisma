@@ -1,6 +1,6 @@
 datasource db {
   provider = "mongodb"
-  url      = env("DATABASE_URL")
+  url      = "mongodb+srv://dimgede2116:dimgede2116@matiusdatabase.301nu7j.mongodb.net/parabotan"
 }
 
 generator client {
