@@ -13,7 +13,7 @@ export default async function SectionHome3() {
   const category = await getCategory()
   return (
     <div id="category" className="w-full flex flex-col items-center justify-center gap-4">
-      <h1 className="font-bold text-center text-xl">Category</h1>
+      <h1 className="font-bold text-center text-xl">Category </h1>
       <div className="flex flex-wrap justify-center w-full gap-4 px-4 mb-10">
         {category.map((cat: Category, i: number) => {
           const originalString = cat.category;
