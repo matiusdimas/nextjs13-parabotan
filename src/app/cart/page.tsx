@@ -9,7 +9,7 @@ interface ProductExt extends Products {
     totalPrice: number
 }
 
-export default function page() {
+export default function Page() {
     const { data: session, status } = useSession()
     const [product, setProduct] = useState([])
     useEffect(() => {
