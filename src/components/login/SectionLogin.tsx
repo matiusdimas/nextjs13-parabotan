@@ -73,7 +73,7 @@ export default function SectionLogin() {
                 Github
             </button>
 
-            <p>Don't have an account yet? <Link className="underline text-blue-500 hover:opacity-80" href={'/register'}>Register</Link></p>
+            <p>Don&apos;t have an account yet{'?'} <Link className="underline text-blue-500 hover:opacity-80" href={'/register'}>Register</Link></p>
         </div>
     )
 }

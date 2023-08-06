@@ -19,7 +19,7 @@ export default function Section(props: Product) {
       setProduct(res.data.data)
     }
     res()
-  }, [])
+  }, [props.params.productId])
   const { image, ...descProduct } = product
 
   return (

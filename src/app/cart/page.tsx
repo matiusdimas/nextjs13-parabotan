@@ -16,19 +16,19 @@ export default function Page() {
         if (status === 'authenticated') {
             const res = async () => {
                 const data = await axios.post('/api/product/cart', {
-                    name: session?.user?.name
+                    name: session.user!.name
                 }).then((d) => setProduct(d.data.product))
             }
             res()
         }
-    }, [status])
+    }, [session?.user!.name])
 
     const handleDelete = async (i: number, id: string) => {
         const updatedProduct = product.filter((_, index) => index !== i);
         setProduct(updatedProduct);
         const res = await axios.post('/api/product/cart/delete', {
             productId: id,
-            name: session?.user?.name
+            name: session?.user!.name
         })
     }
 

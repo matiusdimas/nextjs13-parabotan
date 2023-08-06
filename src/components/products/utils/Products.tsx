@@ -15,7 +15,7 @@ export default function Products(props: FilterParams) {
             console.log(data)
         }
         res()
-    }, [])
+    }, [category, sort, range])
     return (
         <>
             <ButtonFilter category={category!} sort={sort} range={range} />
