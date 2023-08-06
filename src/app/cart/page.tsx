@@ -12,8 +12,10 @@ interface ProductExt extends Products {
 export default function Page() {
     const { data: session, status } = useSession()
     const [product, setProduct] = useState([])
+    const userName = session?.user?.name; // Extract session.user.name
+    const isAuthenticated = status === 'authenticated';
     useEffect(() => {
-        if (status === 'authenticated') {
+        if (isAuthenticated && userName) {
             const res = async () => {
                 const data = await axios.post('/api/product/cart', {
                     name: session.user!.name
@@ -21,7 +23,7 @@ export default function Page() {
             }
             res()
         }
-    }, [session?.user!.name])
+    }, [isAuthenticated, userName])
 
     const handleDelete = async (i: number, id: string) => {
         const updatedProduct = product.filter((_, index) => index !== i);
