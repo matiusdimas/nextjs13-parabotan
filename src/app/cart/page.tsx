@@ -4,9 +4,11 @@ import { useSession } from "next-auth/react"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
+
 interface ProductExt extends Products {
     totalPrice: number
 }
+
 export default function page() {
     const { data: session, status } = useSession()
     const [product, setProduct] = useState([])
